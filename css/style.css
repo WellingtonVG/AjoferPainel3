@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Source+Sans+Pro:200,400,600,700');
+
+body
+{
+    background-color: #1F4E78;
+    font-family: 'Source Sans Pro';
+    padding: 0 15px;
+}
+
+#datepicker, #datepicker2{
+    width:  80%;
+    margin-left: 5px;
+}
+#datepicker, #datepicker2 > span:hover{
+    cursor: pointer;
+}
+
+#LadoA
+{
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+/*Configuração dos cards com títulos na borda*/
+.bordertitle{
+    border: rgb(255, 255, 255) 2px solid;
+    border-radius: 6px;
+    margin: 10px -10px 3px -10px;
+    
+}
+.title{
+    position: relative;
+    top : -0.6em;
+    display: inline;
+    text-align: left;
+    margin-left: 1em;
+    background-color: #1F4E78;
+    padding: 0px 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+.valor
+{
+    position: relative;
+    text-align: center;
+    font-size: 2.4em;
+    margin-bottom: .77em;
+    color: white;
+    font-weight: 600;
+}
+
+.cellb{
+    position: relative;
+    top : -0.7em;
+    background-color: transparent;
+    padding: 0px 14px;
+    margin-bottom: -.5em;
+}
+
+.cardB{
+    border: white 2px solid;
+    margin: 5px -10px;
+    border-radius: 5px;
+}
+.cardC{
+    border: white 2px solid;
+    margin: 5px -10px;
+    border-radius: 5px;
+}
+.cardT{
+    text-align: center;
+    font-size: 140%;
+    background-image: linear-gradient(60deg,#ffcc33, #FFD966);
+    border-radius: 2px 2px 0px 0px;
+    color: #1F4E78;
+    font-weight: 600;
+}
+.cardT2{
+    text-align: center;
+    font-size: 112%;
+    padding: 1.5% 0;
+    background-image: linear-gradient(60deg,#ffcc33, #FFD966);
+    border-radius: 2px 2px 0px 0px;
+    color: #1F4E78;
+    font-weight: 600;
+} 
+.cardV{
+    margin: .1em;
+    text-align: center;
+    font-size: 2.2em;
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+}
+.botao {
+    background-color: transparent; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    font-size: 16px; /* Set a font size */
+  }
+  
+  /* Darker background on mouse-over */
+  .botao:hover {
+    color: #FFD966;
+  }
+  .nav-tabs{
+      padding: 0px;
+      margin: 0px;
+  }
+  .nav-link {
+    display: block;
+    padding: 0 1rem;
+}
+
+.filtro{
+    text-align: right;
+    padding: 5px 0px 0px 0px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+}
+.filtro2{
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 10px; 
+}
+
+.card2{
+padding: 0px 4%;
+}
+/* The CSS */
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+label {position:relative}
+label:after {
+    content:'<>';
+    font:11px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:6%; top:20%;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
+
+.combo{
+    padding: 3px 0 0 0;
+    text-align: center;
+}
+.combo2{
+   width: 95%;
+}
+.cabecalho
+{
+    background-image: linear-gradient(60deg,#ffcc33, #FFD966);
+}
+#logo{
+    margin: 15px 0px 15px 10px;
+}
+#titulo{
+    color: #1F4E78;
+    font-size: 3.7em;
+    text-align: center;
+}
+
+a {
+    color: #FFD966;
+    text-decoration: none;
+}
+
+#btfiltro{
+    padding-left: 5px;
+    font-family: 'Source Sans Pro';
+}
+
+#exTab2 a{
+    padding: 0px 5px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #1F4E78;
+    cursor: default;
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221) rgb(221, 221, 221) transparent;
+    border-image: initial;
+}
+#legendaselecao01{
+    margin-left: 50px;
+}
+.legendaselecao
+{
+    color: white;
+}

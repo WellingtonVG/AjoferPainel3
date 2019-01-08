@@ -1,0 +1,28 @@
+body
+{
+    background-color: #1F4E78;
+}
+form.form-signin{
+    width: 370px;
+    margin: 50px auto;    
+}
+
+form.form-signin .input{
+    margin: 10px;
+}
+input {
+    margin: 25px 0px;
+}
+h2{
+    text-align: center;
+    color: #FFD34F;
+    font-weight: 600;
+    font-size: 36px;
+}
+#logo{
+margin-top: 75px;
+text-align: center;
+}
+.text-success {
+    color: #e01aaf;
+}
