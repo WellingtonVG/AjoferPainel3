@@ -121,22 +121,51 @@ function geraperiodo() {
 //funçoes qu rodam qndo carregar a página
 $(document).ready(function() {
   function preencheValores() {
-    var idCli = $("#cliente").val();
+
+    var idcli = $("#cbcliente").val();
+    var dataini = $("#datepicker").find("input").val();
+    var datafim = $("#datepicker2").find("input").val();
+
+    var datainib = dataini.split("-")
+    var datafimb = datafim.split("-")
+
 
     $.ajax({
       url:'preencheValores.php',
       type: 'POST',
-      data:{vCli:idCli},
+      data:{vcli:idcli, vmesini:datainib[0], vanoini:datainib[1], vmesfim:datafimb[0], vanofim:datafimb[1]},
       success:function(data)
       {
-        alert(data)
+        //lado A
         var retorno = data.split("#");
         $("#valorA1").html(retorno[0]);
+        $("#valorA2").html(retorno[1]);
+        $("#valorA3").html(retorno[2]);
+        $("#valorA4").html(retorno[3]);
+        $("#valorA5").html(retorno[4]);
+        $("#valorA6").html(retorno[5]);
+        $("#valorA7").html(retorno[6]);
+        $("#valorA8").html(retorno[7]);
+        //lado B
+        $("#valorB1").html(retorno[8]);
+        $("#valorB2").html(retorno[9]);
+        $("#valorB3").html(retorno[10]);
+        $("#valorB4").html(retorno[11]);
+        $("#valorB5").html(retorno[12]);
+        $("#valorB6").html(retorno[13]);
+        $("#valorB7").html(retorno[14]);
       }
     })
   }
 
-  $("#cliente").on("change",function(){
+  $("#cbcliente").on("change",function(){
+    preencheValores()
+  });
+
+  $("#datepicker").on("change", function () {
+    preencheValores()
+  });
+  $("#datepicker2").on("change", function () {
     preencheValores()
   });
 

@@ -47,6 +47,7 @@
 				  <button class="botao" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-sign-out"><span id="btfiltro">Sair</span></i></button>
           <span id="legendaselecao01" class="legendaselecao"> Período selecionado:</span>
           <span id="periodo" class="legendaselecao"></span>
+          <span id="cliente" class="legendaselecao"></span>
           <div class="collapse" id="collapseExample">
 
               <div class="row">
@@ -70,7 +71,7 @@
                   </div>
                   <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
-                          <select class="combo2" id="cliente">
+                          <select class="combo2" id="cbcliente">
                               <option value="0"> Cliente </option>
                               <?php
                               $selectCliente = "SELECT distinct cliente_fat from painelajofer order by cliente_fat";
@@ -84,7 +85,7 @@
                   </div>
                   <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
-                          <select class="combo2">
+                          <select class="cboperacao">
                               <option value="0"> Operação </option>
                               <option>Short Option</option>
                               <option>This Is A Longer Option</option>
@@ -149,7 +150,7 @@
           <div class="col">
             <div class="bordertitle">
               <div class="title">Valor das Mercadorias</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA2"></div>
             </div>
           </div>
         </div>
@@ -157,13 +158,13 @@
           <div class="col">
             <div class="bordertitle">
               <div class="title">Valor do Frete Peso</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA3"></div>
             </div>
           </div>
           <div class="col">
             <div class="bordertitle">
               <div class="title">Valor do ICMS</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA4"></div>
             </div>
           </div>
         </div>
@@ -171,13 +172,13 @@
           <div class="col">
             <div class="bordertitle">
               <div class="title">Frete Valor</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA5"></div>
             </div>
           </div>
           <div class="col">
             <div class="bordertitle">
               <div class="title">Valor do Pedágio</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA6"></div>
             </div>
           </div>
         </div>
@@ -185,13 +186,13 @@
           <div class="col">
             <div class="bordertitle">
               <div class="title">Outros Valores</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA7"></div>
             </div>
           </div>
           <div class="col">
             <div class="bordertitle">
               <div class="title">Gris / Outras taxas</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA8"></div>
             </div>
           </div>
         </div>
@@ -207,8 +208,8 @@
                     <div class="cardT">
                       FRETE SOBRE AS<br>MERCADORIAS
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB1">
+
                     </div>
                   </div>
                 </div>
@@ -217,8 +218,8 @@
                     <div class="cardT">
                       PEDÁGIO SOBRE<br>O FRETE
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB2">
+
                     </div>
                   </div>
                 </div>
@@ -227,8 +228,8 @@
                     <div class="cardT2">
                       PESO MÉDIO POR<br>ENTREGA (TON)
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB3">
+
                     </div>
                   </div>
                 </div>
@@ -247,8 +248,8 @@
                     <div class="cardT2">
                       QUANTIDADE DE DOCUMENTOS<br>EMITIDOS
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB4">
+                    
                     </div>
                   </div>
                 </div>
@@ -257,8 +258,7 @@
                     <div class="cardT">
                       VALOR DO FRETE POR<br>ENTREGA
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB5">
                     </div>
                   </div>
                 </div>
@@ -277,8 +277,7 @@
                     <div class="cardT">
                       TONELADAS<br>TRANSPORTADAS
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB6">
                     </div>
                   </div>
                 </div>
@@ -287,8 +286,7 @@
                     <div class="cardT">
                       VALOR DO FRETE POR<br>TONELADA
                     </div>
-                    <div class="cardV">
-                      1,23 %
+                    <div class="cardV" id="valorB7">
                     </div>
                   </div>
                 </div>
