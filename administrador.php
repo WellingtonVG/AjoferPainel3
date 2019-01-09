@@ -1,5 +1,6 @@
 <?php
-	session_start();
+  session_start();
+  include_once("conexao.php");
 
 	if((isset($_SESSION['usuarioNome']))==false)
 	{
@@ -67,28 +68,24 @@
                           <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                       </div>
                   </div>
-                  <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 combo"> 
+                  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
-                          <select class="combo2">
-                              <option selected> Select Box </option>
-                              <option>Short Option</option>
-                              <option>This Is A Longer Option</option>
+                          <select class="combo2" id="cliente">
+                              <option value="0"> Cliente </option>
+                              <?php
+                              $selectCliente = "SELECT distinct cliente_fat from painelajofer order by cliente_fat";
+                              $resultado = mysqli_query($conn, $selectCliente);
+                              while($linhaResultado = mysqli_fetch_assoc($resultado)){ ?>
+                                <option value="<?php echo $linhaResultado['cliente_fat']; ?>"><?php echo $linhaResultado['cliente_fat']; ?></option> <?php
+                              }
+                            ?>
                           </select>
                       </label>
                   </div>
-                  <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 combo"> 
+                  <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
                           <select class="combo2">
-                              <option selected> Select Box </option>
-                              <option>Short Option</option>
-                              <option>This Is A Longer Option</option>
-                          </select>
-                      </label>
-                  </div>
-                  <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 combo"> 
-                      <label>
-                          <select class="combo2">
-                              <option selected> Select Box </option>
+                              <option value="0"> Operação </option>
                               <option>Short Option</option>
                               <option>This Is A Longer Option</option>
                           </select>
@@ -146,26 +143,12 @@
           <div class="col">
             <div class="bordertitle">
               <div class="title">Valor do Frete</div>
-              <div class="valor">R$25.356,00</div>
+              <div class="valor" id="valorA1"></div>
             </div>
           </div>
           <div class="col">
             <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
-              <div class="valor">R$25.356,00</div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
-              <div class="valor">R$25.356,00</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
+              <div class="title">Valor das Mercadorias</div>
               <div class="valor">R$25.356,00</div>
             </div>
           </div>
@@ -173,13 +156,13 @@
         <div class="row">
           <div class="col">
             <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
+              <div class="title">Valor do Frete Peso</div>
               <div class="valor">R$25.356,00</div>
             </div>
           </div>
           <div class="col">
             <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
+              <div class="title">Valor do ICMS</div>
               <div class="valor">R$25.356,00</div>
             </div>
           </div>
@@ -187,13 +170,27 @@
         <div class="row">
           <div class="col">
             <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
+              <div class="title">Frete Valor</div>
               <div class="valor">R$25.356,00</div>
             </div>
           </div>
           <div class="col">
             <div class="bordertitle">
-              <div class="title">Valor do Frete</div>
+              <div class="title">Valor do Pedágio</div>
+              <div class="valor">R$25.356,00</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="bordertitle">
+              <div class="title">Outros Valores</div>
+              <div class="valor">R$25.356,00</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bordertitle">
+              <div class="title">Gris / Outras taxas</div>
               <div class="valor">R$25.356,00</div>
             </div>
           </div>
