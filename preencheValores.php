@@ -27,7 +27,7 @@
     }   
 
     //fragmento do select correspondente ao cliente
-    //verifica se cliente== "0"
+    //verifica se cliente== "0" 
     if($_POST['vcli']=="0")
     {
         $cliente="";
@@ -39,10 +39,18 @@
 
     //fragmento do select correspondente a operação
 
+    if($_POST['vop']=="0")
+    {
+        $operacao="";
+    }
+    else
+    {
+        $operacao = " and TP_OPERACAO  = '".$_POST['vop']."'";
+    }
 
     // ------------------------------------------------------------Valor 01-------------------------------------------------------------
 
-    $query01 = "SELECT sum(total_prest) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query01 = "SELECT sum(total_prest) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado01 = mysqli_query($conn, $query01);
     $linhaResultado01 = mysqli_fetch_assoc($resultado01);
 
@@ -50,7 +58,7 @@
     
     // ------------------------------------------------------------Valor 02-------------------------------------------------------------
 
-    $query02 = "SELECT sum(VALOR_NF) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query02 = "SELECT sum(VALOR_NF) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado02 = mysqli_query($conn, $query02);
     $linhaResultado02 = mysqli_fetch_assoc($resultado02);
 
@@ -58,7 +66,7 @@
 
     // ------------------------------------------------------------Valor 03-------------------------------------------------------------
 
-    $query03 = "SELECT sum(FRETE_PESO) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query03 = "SELECT sum(FRETE_PESO) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado03 = mysqli_query($conn, $query03);
     $linhaResultado03 = mysqli_fetch_assoc($resultado03);
 
@@ -66,7 +74,7 @@
 
     // ------------------------------------------------------------Valor 04-------------------------------------------------------------
 
-    $query04 = "SELECT sum(ICMS) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query04 = "SELECT sum(ICMS) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado04 = mysqli_query($conn, $query04);
     $linhaResultado04 = mysqli_fetch_assoc($resultado04);
 
@@ -74,7 +82,7 @@
 
     // ------------------------------------------------------------Valor 05-------------------------------------------------------------
 
-    $query05 = "SELECT sum(FRETE_VALOR) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query05 = "SELECT sum(FRETE_VALOR) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado05 = mysqli_query($conn, $query05);
     $linhaResultado05 = mysqli_fetch_assoc($resultado05);
 
@@ -82,7 +90,7 @@
 
     // ------------------------------------------------------------Valor 06-------------------------------------------------------------
 
-    $query06 = "SELECT sum(PEDAGIO) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query06 = "SELECT sum(PEDAGIO) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado06 = mysqli_query($conn, $query06);
     $linhaResultado06 = mysqli_fetch_assoc($resultado06);
 
@@ -90,7 +98,7 @@
 
     // ------------------------------------------------------------Valor 07-------------------------------------------------------------
 
-    $query07 = "SELECT sum(OUTROS) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query07 = "SELECT sum(OUTROS) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado07 = mysqli_query($conn, $query07);
     $linhaResultado07 = mysqli_fetch_assoc($resultado07);
 
@@ -98,7 +106,7 @@
 
     // ------------------------------------------------------------Valor 08-------------------------------------------------------------
 
-    $query08 = "SELECT sum(Gris) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query08 = "SELECT sum(Gris) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado08 = mysqli_query($conn, $query08);
     $linhaResultado08 = mysqli_fetch_assoc($resultado08);
 
@@ -132,7 +140,7 @@
 
     // ------------------------------------------------------------Valor 12-------------------------------------------------------------
     
-    $query12 = "SELECT sum(qtde_docto) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query12 = "SELECT sum(qtde_docto) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado12 = mysqli_query($conn, $query12);
     $linhaResultado12 = mysqli_fetch_assoc($resultado12);
 
@@ -145,7 +153,7 @@
 
     // ------------------------------------------------------------Valor 14-------------------------------------------------------------
     
-    $query14 = "SELECT sum(PESO) as soma FROM painelajofer ".$data.$cliente." ORDER BY DATA_EMISSAO";
+    $query14 = "SELECT sum(PESO) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado14 = mysqli_query($conn, $query14);
     $linhaResultado14 = mysqli_fetch_assoc($resultado14);
 
@@ -182,10 +190,23 @@
 
     $valor13 = 'R$' . number_format($valor13, 2, ',', '.');
 
+    // ------------------------------------------------------------Valor 15-------------------------------------------------------------
+
+    if(($linhaResultado01['soma']==0)||($linhaResultado14['soma']==0))
+    {
+      $valor15="0";
+    }
+    else
+    {   
+        $frete= $linhaResultado01['soma'];
+        $peso= $linhaResultado14['soma']/1000;
+        $valor15=($frete/$peso);
+    }
+
+    $valor15 = 'R$' . number_format($valor15, 2, ',', '.'); 
 
 
-
-    echo $valor1."#".$valor2."#".$valor3."#".$valor4."#".$valor5."#".$valor6."#".$valor7."#".$valor8."#".$valor9."#"."$valor9"."#".$valor11."#".$valor12."#".$valor13."#".$valor14;
+    echo $valor1."#".$valor2."#".$valor3."#".$valor4."#".$valor5."#".$valor6."#".$valor7."#".$valor8."#".$valor9."#"."$valor9"."#".$valor11."#".$valor12."#".$valor13."#".$valor14."#".$valor15;
 
     
 ?>

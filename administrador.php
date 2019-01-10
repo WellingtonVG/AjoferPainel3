@@ -85,10 +85,8 @@
                   </div>
                   <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
-                          <select class="cboperacao">
-                              <option value="0"> Operação </option>
-                              <option>Short Option</option>
-                              <option>This Is A Longer Option</option>
+                          <select class="combo2" id="cboperacao">
+                              <option value="0">Operação                  </option>
                           </select>
                       </label>
                   </div>
@@ -301,11 +299,11 @@
         </div>
 <!-- aba 02 -->
 				<div class="tab-pane" id="2">
-          <h3>Notice the gap between the content and tab after applying a background color</h3>
+          ...
         </div>
 <!-- aba 03 -->
         <div class="tab-pane" id="3">
-          <h3>add clearfix to tab-content (see the css)</h3>
+          ...
 				</div>
 			</div>
   </div>
