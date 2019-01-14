@@ -16,7 +16,7 @@
 
     echo $sql;
 
-    echo '<option value="0">Operação                  </option>' ;
+    echo '<option value="0">Todas as Operações         </option>' ;
 
     if (($_POST['vcli']=="0")==false)
     {

@@ -206,7 +206,7 @@
     $valor15 = 'R$' . number_format($valor15, 2, ',', '.'); 
 
 
-    echo $valor1."#".$valor2."#".$valor3."#".$valor4."#".$valor5."#".$valor6."#".$valor7."#".$valor8."#".$valor9."#"."$valor9"."#".$valor11."#".$valor12."#".$valor13."#".$valor14."#".$valor15;
+    echo $valor1."#".$valor2."#".$valor3."#".$valor4."#".$valor5."#".$valor6."#".$valor7."#".$valor8."#".$valor9."#"."$valor10"."#".$valor11."#".$valor12."#".$valor13."#".$valor14."#".$valor15;
 
     
 ?>

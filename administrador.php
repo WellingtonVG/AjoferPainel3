@@ -72,7 +72,7 @@
                   <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
                           <select class="combo2" id="cbcliente">
-                              <option value="0"> Cliente </option>
+                              <option value="0">Todos os Clientes         </option>
                               <?php
                               $selectCliente = "SELECT distinct cliente_fat from painelajofer order by cliente_fat";
                               $resultado = mysqli_query($conn, $selectCliente);
@@ -86,7 +86,7 @@
                   <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 combo"> 
                       <label>
                           <select class="combo2" id="cboperacao">
-                              <option value="0">Operação                  </option>
+                              <option value="0">Todas as Operações         </option>
                           </select>
                       </label>
                   </div>
