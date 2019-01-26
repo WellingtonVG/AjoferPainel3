@@ -106,13 +106,12 @@
 
     // ------------------------------------------------------------Valor 08-------------------------------------------------------------
 
-    $query08= "SELECT sum(ADEME) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
+    $query08 = "SELECT sum(Gris) as soma FROM painelajofer ".$data.$cliente.$operacao." ORDER BY DATA_EMISSAO";
     $resultado08 = mysqli_query($conn, $query08);
     $linhaResultado08 = mysqli_fetch_assoc($resultado08);
+
     $valor8 = 'R$' . number_format($linhaResultado08['soma'], 2, ',', '.');
 
-    // ------------------------------------------------------------Valor SUBTOTAL-------------------------------------------------------------
-    $subtotal=($linhaResultado01['soma'])-(($linhaResultado06['soma']));
     // ------------------------------------------------------------Valor 09-------------------------------------------------------------
 
     if(($linhaResultado02['soma']==0)||($linhaResultado01['soma']==0))
@@ -121,8 +120,7 @@
     }
     else
     {
-        
-        $valor9=(($subtotal)/($linhaResultado02['soma'])*100);
+      $valor9=(($linhaResultado01['soma'])/($linhaResultado02['soma'])*100);
     }
 
     $valor9= number_format($valor9, 2, ',', '.').' %';
@@ -135,7 +133,7 @@
     }
     else
     {
-      $valor10=(($linhaResultado06['soma'])/($subtotal)*100);
+      $valor10=(($linhaResultado06['soma'])/($linhaResultado01['soma'])*100);
     }
 
     $valor10= number_format($valor10, 2, ',', '.').' %';
@@ -187,7 +185,7 @@
     }
     else
     {
-        $valor13=(($subtotal)/$linhaResultado12['soma']);
+        $valor13=(($linhaResultado01['soma'])/$linhaResultado12['soma']);
     }
 
     $valor13 = 'R$' . number_format($valor13, 2, ',', '.');
@@ -200,30 +198,15 @@
     }
     else
     {   
-        $frete= $linhaResultado03['soma'];
+        $frete= $linhaResultado01['soma'];
         $peso= $linhaResultado14['soma']/1000;
         $valor15=($frete/$peso);
     }
 
     $valor15 = 'R$' . number_format($valor15, 2, ',', '.'); 
 
-    // ------------------------------------------------------------Valor 16-------------------------------------------------------------
 
-    if(($linhaResultado02['soma']==0)||($linhaResultado14['soma']==0))
-    {
-      $valor16="0";
-    }
-    else
-    {   
-        $frete= $linhaResultado02['soma'];
-        $peso= $linhaResultado14['soma']/1000;
-        $valor16=($frete/$peso);
-    }
-
-    $valor16 = 'R$' . number_format($valor16, 2, ',', '.'); 
-
-
-    echo $valor1."#".$valor2."#".$valor3."#".$valor4."#".$valor5."#".$valor6."#".$valor7."#".$valor8."#".$valor9."#".$valor10."#".$valor11."#".$valor12."#".$valor13."#".$valor14."#".$valor15."#".$valor16;
+    echo $valor1."#".$valor2."#".$valor3."#".$valor4."#".$valor5."#".$valor6."#".$valor7."#".$valor8."#".$valor9."#"."$valor10"."#".$valor11."#".$valor12."#".$valor13."#".$valor14."#".$valor15;
 
     
 ?>

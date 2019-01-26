@@ -175,7 +175,7 @@
         <div class="row">
           <div class="col">
             <div class="bordertitle">
-              <div class="title">Valor Total da Prestação</div>
+              <div class="title">Valor do Frete</div>
               <div class="valor" id="valorA1"></div>
             </div>
           </div>
@@ -311,15 +311,6 @@
                       TONELADAS<br>TRANSPORTADAS
                     </div>
                     <div class="cardV" id="valorB6">
-                    </div>
-                  </div>
-                </div>
-                <div class="col card2">
-                  <div class="cardB">
-                    <div class="cardT">
-                      MERCADORIAS<br>SOBRE PESO
-                    </div>
-                    <div class="cardV" id="valorB8">
                     </div>
                   </div>
                 </div>

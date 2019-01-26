@@ -154,7 +154,6 @@ $(document).ready(function () {
         $("#valorB5").html(retorno[12]);
         $("#valorB6").html(retorno[13]);
         $("#valorB7").html(retorno[14]);
-        $("#valorB8").html(retorno[15]);
       }
     })
   }

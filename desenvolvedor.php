@@ -38,7 +38,7 @@
         <a href=""><img src="imagens/logo-u.png" alt="some text" width=245 height=50 id="logo"></a>
     </div>
     <div class="col-sm-12 col-md-7 col-lg-6 col-xl-6" id="titulo">
-        Painel de Gestão
+        Desenvolvedor
     </div>
   </div>
   <div class="container-fluid" id="area-sair">

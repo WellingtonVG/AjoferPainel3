@@ -1,7 +1,7 @@
 <?php
 	$servidor = "localhost";
-	$usuario = "quaestum";
-	$senha = "abc123**";
+	$usuario = "root";
+	$senha = "";
 	$dbname = "ajofer";
 	
 	//Criar a conexao
